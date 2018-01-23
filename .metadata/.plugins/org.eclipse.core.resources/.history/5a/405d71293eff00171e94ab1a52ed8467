@@ -1,0 +1,71 @@
+package cn.com.agree.OleTest;
+
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+
+public class Player {
+	protected Shell shell; 
+    private String file;
+  
+    /**  
+     * Launch the application  
+     * 开始应用
+     * @param args  
+     */  
+    public static void main(String[] args)   
+    {   
+        try  
+        {   
+            Player window = new Player();   
+            window.open();   
+        }   
+        catch (Exception e)   
+        {   
+            e.printStackTrace();   
+        }   
+    }   
+  
+    /**  
+     * Open the window  
+     */  
+    public void open()   
+    {   
+        final Display display = Display.getDefault();   
+        createContents();   
+        shell.open();   
+        shell.layout();   
+        while (!shell.isDisposed())   
+        {   
+            if (!display.readAndDispatch())   
+                display.sleep();   
+        }   
+    }   
+  
+    /**  
+     * Create contents of the window  
+     */  
+    protected void createContents()   
+    {   
+        shell = new Shell();   
+        shell.setLayout(new FillLayout());   
+        shell.setSize(500, 375);   
+        shell.setText("模板播放");   
+  
+        final WMP composite = new WMP(shell, SWT.NONE);   
+//        composite.play("D:/1.swf"); 
+        this.setFile("F:/软件工程/Java/javaweb/东软学习资料/复习04/2.wmv");
+        composite.play(file);   
+  
+        //   
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
+    }  
+}

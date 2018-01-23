@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension-point id="messages" name="Welcome Messages" schema="schema/messages.exsd"/>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="agree.studywizard.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="agree.studywizard.Perspective"
+            id="agree.studyWizard.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            class="agree.studywizard.wizard.NewWizard"
+            icon="icons/alt_window_16.gif"
+            id="agree.studyWizard.wizard1"
+            name="新建向导">
+      </wizard>
+   </extension>
+   <extension
+         point="agree.studyWizard.messages">
+      <impl
+            class="agree.studywizard.messageProvider.messageProvider"
+            name="WWW">
+      </impl>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            description="第一个自定义扩展点"
+            id="agree.studyWizard.actionSet1"
+            label="label"
+            visible="true">
+         <action
+               allowLabelUpdate="false"
+               class="agree.studywizard.messageProvider.ShowMessageAction"
+               icon="icons/alt_window_16.gif"
+               id="agree.studyWizard.action1"
+               label="message"
+               mode="FORCE_TEXT"
+               style="push"
+               toolbarPath="additions"
+               tooltip="additions">
+         </action>
+         <menu
+               id="agree.studyWizard.menu1"
+               label="label">
+         </menu>
+      </actionSet>
+   </extension>
+
+</plugin>

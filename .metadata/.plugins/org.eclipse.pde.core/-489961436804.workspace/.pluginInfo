@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="842" class="agree.study_1214.Activator" localization="OSGI-INF/l10n/bundle" name="Study_1214" project="agree.study_1214"/>
+	<bundle bundleID="844" class="agree.rcpstudy.Activator" localization="OSGI-INF/l10n/bundle" name="RCPStudy" project="agree.RCPStudy"/>
+	<bundle bundleID="843" class="agree.studyeditor.Activator" localization="OSGI-INF/l10n/bundle" name="StudyEditor" project="agree.StudyEditor"/>
+	<bundle bundleID="845" class="a.c.Activator" localization="OSGI-INF/l10n/bundle" name="C" project="a.c"/>
+	<bundle bundleID="849" class="helloole.Activator" localization="OSGI-INF/l10n/bundle" name="HelloOle" project="HelloOle"/>
+	<bundle bundleID="846" class="com.example.GefExamplePlugin" isBundle="false" name="GefExample Plug-in" project="GefExample" provider="">
+		<library name="GefPractice.jar"/>
+	</bundle>
+	<bundle bundleID="847" class="hellogef.Activator" localization="plugin" name="HelloGEF Plug-in" project="HelloGEF"/>
+	<bundle bundleID="848" class="agree.studywizard.Activator" localization="OSGI-INF/l10n/bundle" name="StudyWizard" project="agree.studyWizard"/>
+</map>

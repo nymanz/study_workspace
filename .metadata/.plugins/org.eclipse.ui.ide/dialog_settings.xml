@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="180" key="DIALOG_Y_ORIGIN"/>
+		<item value="379" key="DIALOG_X_ORIGIN"/>
+	</section>
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="false" key="ShowDerived"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/agree.studyWizard/src/agree/studywizard/messageProvider/ShowMessageAction.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/QueueDemo/lib/ognl-3.0.5.jar&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="59" key="DIALOG_Y_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="391" key="DIALOG_X_ORIGIN"/>
+			<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="E:\工作应用\market\Platform\workspace\V12306-master"/>
+			<item value="E:\工作应用\market\Platform\workspace\QueueDemo"/>
+			<item value="E:\工作应用\market\Platform\workspace\HelloGEF"/>
+			<item value="E:\工作应用\market\Platform\workspace\GefExample"/>
+			<item value="C:\Users\赵乾泽\Desktop\a.c"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="com.springsource.sts.wizard.template" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.springframework.ide.eclipse.beans.ui.wizards.category"/>
+		</list>
+	</section>
+</section>

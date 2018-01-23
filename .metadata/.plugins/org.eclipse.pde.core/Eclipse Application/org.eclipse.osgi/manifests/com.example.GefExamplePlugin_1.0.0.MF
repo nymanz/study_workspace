@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Generated-from: 1182960876000;type=2
+Bundle-ManifestVersion: 2
+Bundle-Name: GefExample Plug-in
+Bundle-SymbolicName: com.example.GefExamplePlugin; singleton:=true
+Bundle-Version: 1.0.0
+Bundle-ClassPath: GefPractice.jar
+Bundle-Activator: com.example.GefExamplePlugin
+Bundle-Localization: plugin
+Export-Package: com.example,
+ com.example.actions,
+ com.example.commands,
+ com.example.dnd,
+ com.example.figures,
+ com.example.image,
+ com.example.model,
+ com.example.parts,
+ com.example.policies,
+ com.example.tools,
+ com.example.ui
+Require-Bundle: org.eclipse.core.resources,
+ org.eclipse.gef,
+ org.eclipse.ui,
+ org.eclipse.ui.editors,
+ org.eclipse.ui.views,
+ org.eclipse.ui.ide,
+ org.eclipse.core.runtime
+Eclipse-LazyStart: true

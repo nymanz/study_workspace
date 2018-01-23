@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;FirstView.java&apos; to &apos;agree.RCPStudy/src/agree.rcpstudy&apos;&#x0D;&#x0A;- Original project: &apos;a.c&apos;&#x0D;&#x0A;- Destination element: &apos;agree.RCPStudy/src/agree.rcpstudy&apos;&#x0D;&#x0A;- Original element: &apos;a.c.FirstView.java&apos;" description="Copy compilation unit" destination="=agree.RCPStudy/src&lt;agree.rcpstudy" element1="/src&lt;a.c{FirstView.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1513150475209" units="1" version="1.0"/>
+</session>

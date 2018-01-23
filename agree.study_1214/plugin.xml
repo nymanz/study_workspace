@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="agree.study_1214.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="agree.study_1214.Perspective"
+            id="agree.study_1214.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            id="agree.study_1214.actionSet"
+            label="Sample Action Set"
+            visible="true">
+         <menu
+               id="sampleMenu"
+               label="Sample &amp;Menu">
+            <separator
+                  name="sampleGroup">
+            </separator>
+         </menu>
+         <action
+               class="agree.study_1214.actions.SampleAction"
+               icon="icons/sample.gif"
+               id="agree.study_1214.actions.SampleAction"
+               label="&amp;Sample Action"
+               menubarPath="sampleMenu/sampleGroup"
+               toolbarPath="sampleGroup"
+               tooltip="Hello, Eclipse world">
+         </action>
+         <action
+               class="agree.study_1214.actions.SampleAction"
+               id="agree.study_1214.action1"
+               label="Action2"
+               menubarPath="sampleMenu/sampleGroup"
+               style="push"
+               tooltip="Hi, Eclipse world">
+         </action>
+      </actionSet>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="agree.study_1214"
+            name="Sample Category">
+      </category>
+      <view
+            category="agree.study_1214"
+            class="agree.study_1214.views.SampleView"
+            icon="icons/sample.gif"
+            id="agree.study_1214.views.SampleView"
+            name="Sample View">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="agree.study_1214.views.SampleView"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.ProblemView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="agree.study_1214.contribution1"
+            nameFilter="Three"
+            objectClass="java.lang.String">
+         <menu
+               id="agree.study_1214.menu1"
+               label="New Submenu"
+               path="additions">
+            <separator
+                  name="example">
+            </separator>
+         </menu>
+         <action
+               class="agree.study_1214.popup.actions.NewAction"
+               enablesFor="1"
+               id="agree.study_1214.newAction"
+               label="New Action"
+               menubarPath="agree.study_1214.menu1/group1"
+               tooltip="举例说明如何添加对象操作">
+         </action>
+      </objectContribution>
+      <viewerContribution
+            id="agree.study_1214.viewerContribution1"
+            targetID="#TextEditorContext">
+         <menu
+               id="agree.study_1214.menu1"
+               label="示例编辑器菜单"
+               path="additions">
+            <separator
+                  name="example">
+            </separator>
+         </menu>
+      </viewerContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="agree.study_1214.editors.XMLEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="xml"
+            icon="icons/sample.gif"
+            id="agree.study_1214.editors.XMLEditor"
+            name="Sample XML Editor">
+      </editor>
+   </extension>
+
+</plugin>

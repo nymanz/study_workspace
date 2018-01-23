@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="agree.studyeditor.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="agree.studyeditor.Perspective"
+            id="agree.StudyEditor.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="agree.studyeditor.editors.JsEditor"
+            contributorClass="agree.studyeditor.editors.JsEditorContributor"
+            default="false"
+            icon="icons/alt_window_16.gif"
+            id="agree.StudyEditor.editor1"
+            name="JsEditor">
+      </editor>
+      <editor
+            class="agree.studyeditor.editors.MutiEditorSample"
+            default="false"
+            icon="icons/alt_window_16.gif"
+            id="agree.StudyEditor.MutiEditorSample"
+            name="多页编辑器">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editorActions">
+      <editorContribution
+            id="agree.StudyEditor.editorContribution1"
+            targetID="agree.StudyEditor.editorContribution1">
+      </editorContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="agree.studyeditor.editors.OpenEditorView"
+            icon="icons/alt_launcher.ico"
+            id="agree.StudyEditor.view2"
+            name="打开编辑器"
+            restorable="true">
+      </view>
+   </extension>
+
+</plugin>
