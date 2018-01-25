@@ -8,10 +8,14 @@ import com.neuedu.Service.StudentService;
 @Controller
 public class StudentController {
 	@Autowired
-	private StudentService stuservice;
+	private StudentService stuService;
 
 	public StudentController() {
 		System.out.println("studentController created!");
+	}
+	
+	public void update(String sql,Object...args){
+		stuService.update(sql, args);
 	}
 
 }

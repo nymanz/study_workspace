@@ -11,7 +11,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 		
-		<context:component-scan base-package="com.neuedu.Dao"></context:component-scan>
+		<context:component-scan base-package="com.neuedu"></context:component-scan>
 		
 		<!-- 加载properties文件中 信息 -->
 		<context:property-placeholder location="classpath:jdbc.properties"/>

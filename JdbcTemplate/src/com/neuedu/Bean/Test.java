@@ -21,7 +21,9 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Repository;
 
+import com.neuedu.Controller.StudentController;
 import com.neuedu.Dao.JdbcTemplateDao;
+import com.neuedu.Service.StudentService;
 
 public class Test {
 	
@@ -31,10 +33,17 @@ public class Test {
 	
 	@org.junit.Test
 	public void test01(){
-		JdbcTemplateDao dao = ioc.getBean(JdbcTemplateDao.class);
+		//JdbcTemplateDao dao = ioc.getBean(JdbcTemplateDao.class);
+		//String sql = "INSERT INTO student(`sname`,`age`) VALUES(?,?)";
+		//dao.update(sql, "李忠帅",10000000);
+		
+		/*StudentService stuService = ioc.getBean(StudentService.class);
 		String sql = "INSERT INTO student(`sname`,`age`) VALUES(?,?)";
-		dao.update(sql, "李忠帅",10000000);
+		stuService.update(sql, "李忠",10000000);*/
 	 
+		StudentController stuController = ioc.getBean(StudentController.class);
+		String sql = "INSERT INTO student(`sname`,`age`) VALUES(?,?)";
+		stuController.update(sql, "李忠controller",10000000);
 	}
 	
 	//ʵ��һ
