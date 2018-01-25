@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.0.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+		
+		<context:component-scan base-package="com.neuedu.Dao"></context:component-scan>
+		
+		<!-- 加载properties文件中 信息 -->
+		<context:property-placeholder location="classpath:jdbc.properties"/>
+		
+		<!-- 配置数据源 -->
+		<bean id="comboPooledDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+			<property name="user" value="${jdbc.user}"></property>
+			<property name="password" value="${jdbc.password}"></property>
+			<property name="jdbcUrl" value="${jdbc.url}"></property>
+			<property name="driverClass" value="${jdbc.driver}"></property>
+		</bean>
+		
+		<!-- 配置JdbcTemplate对应的bean， 并装配dataSource数据源属性 -->
+		<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+			<property name="dataSource" ref="comboPooledDataSource"></property>
+		</bean>
+		
+
+		<!-- 为了执行带有具名参数的SQL语句，需要配置NamedParameterJdbcTemplate -->
+		<!-- 该NamedParameterJdbcTemplate类没有无参构造器，需要传入JdbcTemplate对象或者数据源对象[DataSource] -->
+		<bean id="namedParameterJdbcTemplate" class="org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate">
+			<!-- 不能使用property标签配置哦 -->
+			<constructor-arg ref="jdbcTemplate"></constructor-arg>
+		</bean>
+			
+
+</beans>
