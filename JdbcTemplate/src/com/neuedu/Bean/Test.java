@@ -29,8 +29,6 @@ public class Test {
 	
 	private ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-
-	
 	@org.junit.Test
 	public void test01(){
 		//JdbcTemplateDao dao = ioc.getBean(JdbcTemplateDao.class);
@@ -56,19 +54,19 @@ public class Test {
 	}
 
 	//ʵ���
-	/*	private ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
-		private JdbcTemplate template=ioc.getBean(JdbcTemplate.class);
+		private ApplicationContext ioc2 = new ClassPathXmlApplicationContext("applicationContext.xml");
+		private JdbcTemplate template=ioc2.getBean(JdbcTemplate.class);
 
 		@org.junit.Test
-		public void test01() throws SQLException{
+		public void test02() throws SQLException{
 			//ʵ��2����sid=21020�ļ�¼��age�ֶθ���Ϊ13
 			String sql = "UPDATE student SET age = ? WHERE sid = ?";
 			template.update(sql, 13,21020);//��һ����sql��䣬����İ���˳�������ɣ����update�����ǽ��յĿɱ����
-		}*/
+		}
 	
 	//ʵ����
-/*	private ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
-	private JdbcTemplate template=ioc.getBean(JdbcTemplate.class);
+	private ApplicationContext ioc3 = new ClassPathXmlApplicationContext("applicationContext.xml");
+	private JdbcTemplate template2=ioc3.getBean(JdbcTemplate.class);
 	@org.junit.Test
 	public void testBatch(){
 		String sql="INSERT INTO student(`sname`,`age`) VALUES(?,?)";
@@ -83,15 +81,12 @@ public class Test {
 		list.add(new Object[]{"Tom2016",2000});
 		list.add(new Object[]{"Tom2017",3000});
 		
-		template.batchUpdate(sql, list);
-	}*/
+		template2.batchUpdate(sql, list);
+	}
 	
-	/*ʵ����
-	private ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
-	private JdbcTemplate template=ioc.getBean(JdbcTemplate.class);
 	
 	@org.junit.Test
-	public void test01(){
+	public void test03(){
 		//��Ҫע����ǣ�sql����еı���Ҫ���Ӧʵ������������һ�£�
 		String sql = "SELECT sid AS sid,sname AS sname,age FROM student WHERE sid=?";
 		
@@ -100,14 +95,10 @@ public class Test {
 		//���һ�������ǿɱ����������sql��������δ��ݲ���!
 		Student employee = template.queryForObject(sql, rowMapper, 21020);
 		System.out.println(employee);
-	}*/
-	
-	//ʵ����
-		/*private ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
-		private JdbcTemplate template=ioc.getBean(JdbcTemplate.class);
+	}
 		
 		@org.junit.Test
-		public void test01(){
+		public void test04(){
 			//��Ҫע����ǣ�sql����еı���Ҫ���Ӧʵ������������һ�£�
 			String sql = "SELECT sid AS sid,sname AS sname,age FROM student WHERE sid > ?";
 			
@@ -119,47 +110,37 @@ public class Test {
 			for (Student employee : list) {
 				System.out.println(employee);
 			}
-		}*/
+		}
 	
-	//ʵ����
-		/*private ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
-		private JdbcTemplate template=ioc.getBean(JdbcTemplate.class);
-		
 		@org.junit.Test
-		public void test01(){
+		public void test05(){
 			String sql = "SELECT MAX(sid) FROM student";
-			//��Ҫָ������ֵ������,�������ͱ����ǰ�װ����
 			Integer maxsid = template.queryForObject(sql, Integer.class);
 			System.out.println(maxsid);
-		}*/
+		}
 	
-	//ʵ����
-		/*private ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
 		private NamedParameterJdbcTemplate namedJdbcTemplate = ioc.getBean(NamedParameterJdbcTemplate.class);
 		
 		@org.junit.Test
-		public void test01(){
+		public void test06(){
 			String sql="INSERT INTO student(`sname`,`age`) VALUES(:paramName,:paramSalary)";//value����paramMap�еļ�ֵ
 			Map<String,Object> paramMap = new HashMap<String,Object>();
-			paramMap.put("paramName","��ѧ��" );
+			paramMap.put("paramName","王欲鸿" );
 			paramMap.put("paramSalary",1000);
 			
 			namedJdbcTemplate.update(sql, paramMap);
-		}*/
+		}
 	
-	//ʵ���
-		/*private ApplicationContext ioc = new ClassPathXmlApplicationContext("applicationContext.xml");
-		private NamedParameterJdbcTemplate namedJdbcTemplate = ioc.getBean(NamedParameterJdbcTemplate.class);
 		
 		@org.junit.Test
-		public void test01(){
+		public void test07(){
 			String sql="INSERT INTO student(`sname`,`age`) VALUES(:sname,:age)";//value���Ƕ����е�������
 			//��BeanPropertySqlParameterSource�๹������Ҫһ���������ö��������һ����װ��sql������Ķ���
 			//��ʱҪ������������Ҫ��sql�еĲ������һ�£���������ʹ��Employee���������
-			Student employee= new Student( "���",1200, 1500);
+			Student employee= new Student( "哈哈",1200, 1500);
 			//��ʵ��������ʽ��װ��������ֵ
 			SqlParameterSource source = new BeanPropertySqlParameterSource(employee);
 			
 			namedJdbcTemplate.update(sql, source);
-		}*/
+		}
 }
