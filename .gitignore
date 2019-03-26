@@ -3,3 +3,40 @@
 .idea/study_workspace.iml
 .idea/modules.xml
 .idea/misc.xml
+# kdiff3 ignore
+*.orig
+
+data/elasticsearch
+
+# maven ignore
+target/
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+its.iml
+.idea/workspace.xml
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+.project
