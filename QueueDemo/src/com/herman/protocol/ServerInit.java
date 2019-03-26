@@ -13,19 +13,19 @@ import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 import com.herman.util.SocketUtil;
 
 public class ServerInit {
-	
+
 	private IoAcceptor acceptor = new NioSocketAcceptor();
-	
+
 	public void inti() {
 		getAcceptor().getFilterChain().addLast("logger", new LoggingFilter());
-		// Ö¸¶¨±àÂë¹ıÂËÆ÷
+		// æŒ‡å®šç¼–ç è¿‡æ»¤å™¨
 		//acceptor.getFilterChain().addLast("codec",new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
 		getAcceptor().getFilterChain().addLast("codec",new ProtocolCodecFilter(new PrefixedStringCodecFactory(Charset.forName("UTF-8"))));
-		// Ö¸¶¨ÒµÎñÂß¼­´¦ÀíÆ÷
+		// æŒ‡å®šä¸šåŠ¡é€»è¾‘å¤„ç†å™¨
 		getAcceptor().setHandler(new ClientIpPortServerHandler());
-		// ÉèÖÃ¶Ë¿ÚºÅ
+		// è®¾ç½®ç«¯å£å·
 		getAcceptor().setDefaultLocalAddress(new InetSocketAddress(SocketUtil.PORT));
-		// Æô¶¯¼àÌı
+		// å¯åŠ¨ç›‘å¬
 		try {
 			getAcceptor().bind();
 		} catch (IOException e) {
@@ -57,5 +57,5 @@ public class ServerInit {
 	public void setAcceptor(IoAcceptor acceptor) {
 		this.acceptor = acceptor;
 	}
-	
+
 }

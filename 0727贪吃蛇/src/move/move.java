@@ -9,8 +9,8 @@ import emtiy.wall;
 
 public class move {
 
-public static void main(String[] args) {
-		
+	public static void main(String[] args) {
+
 		Point point = new Point(1,1);
 		wall wall = new wall(point,13,13);
 		snake snake=new snake();
@@ -22,7 +22,7 @@ public static void main(String[] args) {
 			Scanner scanner=new Scanner(System.in);
 			direct=scanner.next();
 			if(direct.equals("d")||direct.equals("a")||direct.equals("w")||direct.equals("s")){
-				snake.setWay(direct);	
+				snake.setWay(direct);
 				snake.snakeadd();
 			}
 			int i;
@@ -32,15 +32,15 @@ public static void main(String[] args) {
 				}
 			}
 			if(i!=snake.getPs().length){
-				System.out.println("Ò§µ½×Ô¼ºÁË");
+				System.out.println("å’¬åˆ°è‡ªå·±äº†");
 				break;
 			}
-			if(snake.getPs()[0].getX()==food.getFood()[0].getX()&&snake.getPs()[0].getY()==food.getFood()[0].getY()){		
+			if(snake.getPs()[0].getX()==food.getFood()[0].getX()&&snake.getPs()[0].getY()==food.getFood()[0].getY()){
 				snake.add(food.getFood()[0].getX(),food.getFood()[0].getY());
 				food.givefood(snake.getPs());
 			}
 			if(snake.getPs()[0].getX()<=1||snake.getPs()[0].getX()>=wall.getWallwidth()-1||snake.getPs()[0].getY()<=1||snake.getPs()[0].getY()>=wall.getWallheight()-1){
-				System.out.println("×²Ç½ÁË");
+				System.out.println("æ’žå¢™äº†");
 				break;
 			}
 			wall.buildwall(point, wall.getWallwidth(),wall.getWallheight(),snake.getPs(),food.getFood());

@@ -8,11 +8,12 @@ import com.google.gson.Gson;
 import com.herman.msg.Message;
 
 public class MessageClientHandler extends IoHandlerAdapter {
+	@Override
 	public void exceptionCaught(IoSession session, Throwable cause)
 			throws Exception {
-		//¹Ø±Õ»á»°£¬²¢Ç¿ÖÆË¢ĞÂÃ»ÓĞĞ´ÍêµÄÄÚ´æ
+		//å…³é—­ä¼šè¯ï¼Œå¹¶å¼ºåˆ¶åˆ·æ–°æ²¡æœ‰å†™å®Œçš„å†…å­˜
 		CloseFuture future = session.close(true);
-		//µÇÂ¼Á¬½Ó¹Ø±Õ
+		//ç™»å½•è¿æ¥å…³é—­
 		future.awaitUninterruptibly();
 		Gson gson=new Gson();
 		Message msg=new Message();
@@ -24,13 +25,14 @@ public class MessageClientHandler extends IoHandlerAdapter {
 		session.write(gson.toJson(msg));
 	}
 	public MessageClientHandler() {
-		
+
 	}
 
+	@Override
 	public void messageReceived(IoSession session, Object message)
 			throws Exception {
 		Gson gson=new Gson();
 		Message msg=gson.fromJson(message.toString(), Message.class);
-		System.out.println(msg.toString());// ÏÔÊ¾½ÓÊÕµ½µÄÏûÏ¢
+		System.out.println(msg.toString());// æ˜¾ç¤ºæ¥æ”¶åˆ°çš„æ¶ˆæ¯
 	}
 }

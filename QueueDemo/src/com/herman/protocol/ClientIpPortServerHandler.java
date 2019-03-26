@@ -10,35 +10,38 @@ import com.google.gson.Gson;
 import com.herman.msg.Message;
 
 public class ClientIpPortServerHandler extends IoHandlerAdapter {
+	@Override
 	public void exceptionCaught(IoSession session, Throwable cause)
 			throws Exception {
 		//super.exceptionCaught(session, cause);
-		//¹Ø±Õ»á»°£¬²¢Ç¿ÖÆË¢ĞÂÃ»ÓĞĞ´ÍêµÄÄÚ´æ
+		//å…³é—­ä¼šè¯ï¼Œå¹¶å¼ºåˆ¶åˆ·æ–°æ²¡æœ‰å†™å®Œçš„å†…å­˜
 		CloseFuture future = session.close(true);
-		//µÇÂ¼Á¬½Ó¹Ø±Õ
+		//ç™»å½•è¿æ¥å…³é—­
 		future.awaitUninterruptibly();
 	}
+	@Override
 	public void sessionCreated(IoSession session) {
-		//ÏÔÊ¾¿Í»§¶ËµÄipºÍ¶Ë¿Ú
-		System.out.println("¿Í»§¶ËµÄipºÍ¶Ë¿Ú:"+session.getRemoteAddress().toString());
+		//æ˜¾ç¤ºå®¢æˆ·ç«¯çš„ipå’Œç«¯å£
+		System.out.println("å®¢æˆ·ç«¯çš„ipå’Œç«¯å£:"+session.getRemoteAddress().toString());
 	}
-	public void messageReceived( IoSession session, Object message ) throws Exception{
+	@Override
+	public void messageReceived(IoSession session, Object message ) throws Exception{
 		test1(session,message);
-	} 
+	}
 	void test1(IoSession session, Object message){
 		Gson gson=new Gson();
 		Message msg=gson.fromJson(message.toString(), Message.class);
 		System.out.println(msg.toString());
 		if(msg.getMsg_body().trim().equalsIgnoreCase("quit")&&!session.isClosing()) {
-			//¹Ø±Õ»á»°£¬²¢Ç¿ÖÆË¢ĞÂÃ»ÓĞĞ´ÍêµÄÄÚ´æ
+			//å…³é—­ä¼šè¯ï¼Œå¹¶å¼ºåˆ¶åˆ·æ–°æ²¡æœ‰å†™å®Œçš„å†…å­˜
 			CloseFuture future = session.close(true);
-			//µÇÂ¼Á¬½Ó¹Ø±Õ
+			//ç™»å½•è¿æ¥å…³é—­
 			future.awaitUninterruptibly();
 			return;
 		}
 		Date date = new Date();
 		msg.setMsg_body(date.toString());
-		session.write(gson.toJson(msg));//·µ»Øµ±Ç°Ê±¼äµÄ×Ö·û´®
+		session.write(gson.toJson(msg));//è¿”å›å½“å‰æ—¶é—´çš„å­—ç¬¦ä¸²
 	}
 	void test0(IoSession session, Object message){
 		String str = message.toString();
@@ -46,14 +49,14 @@ public class ClientIpPortServerHandler extends IoHandlerAdapter {
 		System.out.println(str.trim().equalsIgnoreCase("quit"));
 		System.out.println(!session.isClosing());
 		if(str.trim().equalsIgnoreCase("quit")&&!session.isClosing()) {
-			//¹Ø±Õ»á»°£¬²¢Ç¿ÖÆË¢ĞÂÃ»ÓĞĞ´ÍêµÄÄÚ´æ
+			//å…³é—­ä¼šè¯ï¼Œå¹¶å¼ºåˆ¶åˆ·æ–°æ²¡æœ‰å†™å®Œçš„å†…å­˜
 			CloseFuture future = session.close(true);
-			//µÇÂ¼Á¬½Ó¹Ø±Õ
+			//ç™»å½•è¿æ¥å…³é—­
 			future.awaitUninterruptibly();
 			return;
 		}
 		Date date = new Date();
-		session.write( "·µ»Øµ±Ç°Ê±¼äµÄ×Ö·û´®"+date.toString() );//·µ»Øµ±Ç°Ê±¼äµÄ×Ö·û´®
+		session.write( "è¿”å›å½“å‰æ—¶é—´çš„å­—ç¬¦ä¸²"+date.toString() );//è¿”å›å½“å‰æ—¶é—´çš„å­—ç¬¦ä¸²
 		System.out.println("Message written...");
 	}
 }

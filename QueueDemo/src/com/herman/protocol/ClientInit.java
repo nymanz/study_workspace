@@ -15,20 +15,20 @@ import com.herman.util.SocketUtil;
 
 public class ClientInit {
 	public static void main(String[] args) {
-		// ´´½¨¿Í»§¶ËÁ¬½ÓÆ÷
+		// åˆ›å»ºå®¢æˆ·ç«¯è¿æ¥å™¨
 		NioSocketConnector connector = new NioSocketConnector();
 		connector.getFilterChain().addLast("logger", new LoggingFilter());
-		// ÉèÖÃ±àÂë¹ıÂËÆ÷
-//		connector.getFilterChain().addLast("codec",new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8")))); 
+		// è®¾ç½®ç¼–ç è¿‡æ»¤å™¨
+//		connector.getFilterChain().addLast("codec",new ProtocolCodecFilter(new TextLineCodecFactory(Charset.forName("UTF-8"))));
 		connector.getFilterChain().addLast("codec",new ProtocolCodecFilter(new PrefixedStringCodecFactory(Charset.forName("UTF-8"))));
 		connector.setConnectTimeoutMillis(30000L);
-		// ÉèÖÃÊÂ¼ş´¦ÀíÆ÷
+		// è®¾ç½®äº‹ä»¶å¤„ç†å™¨
 		connector.setHandler(new MessageClientHandler());
-		// ½¨Á¢Á¬½Ó
+		// å»ºç«‹è¿æ¥
 		ConnectFuture cf = connector.connect(new InetSocketAddress(SocketUtil.LOCAL_IP,SocketUtil.PORT));
-		// µÈ´ıÁ¬½Ó´´½¨Íê³É
+		// ç­‰å¾…è¿æ¥åˆ›å»ºå®Œæˆ
 		cf.awaitUninterruptibly();
-		// ·¢ËÍÏûÏ¢
+		// å‘é€æ¶ˆæ¯
 		Gson gson=new Gson();
 		Message msg=new Message();
 		msg.setMsg_body("hello");
@@ -37,10 +37,10 @@ public class ClientInit {
 		msg.setSign("sign");
 		msg.setSign_type("signType");
 		cf.getSession().write(gson.toJson(msg));
-		// ·¢ËÍÏûÏ¢
+		// å‘é€æ¶ˆæ¯
 		msg.setMsg_body("quit");
 		cf.getSession().write(gson.toJson(msg));
-		// µÈ´ıÁ¬½Ó¶Ï¿ª
+		// ç­‰å¾…è¿æ¥æ–­å¼€
 		cf.getSession().getCloseFuture().awaitUninterruptibly();
 		connector.dispose();
 	}

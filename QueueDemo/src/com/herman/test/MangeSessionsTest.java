@@ -17,8 +17,8 @@ public class MangeSessionsTest {
 			e.printStackTrace();
 		}
 		if(si.getAcceptor()==null){
-			//ÔÙÉÏÃæ·şÎñ¼àÌıÆô¶¯Ö®ºóµÄÊ®ÃëÊ±¼äÄÚÆô¶¯¿Í»§¶ËÍ¨Ñ¶
-			System.out.println("ÎÒÈÕ£¬ËüÔõÃ´Îª¿ÕÄØ");
+			//å†ä¸Šé¢æœåŠ¡ç›‘å¬å¯åŠ¨ä¹‹åçš„åç§’æ—¶é—´å†…å¯åŠ¨å®¢æˆ·ç«¯é€šè®¯
+			System.out.println("æˆ‘æ—¥ï¼Œå®ƒæ€ä¹ˆä¸ºç©ºå‘¢");
 			return;
 		}
 		Map<Long, IoSession> map=si.getAcceptor().getManagedSessions();

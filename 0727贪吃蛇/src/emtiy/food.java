@@ -10,7 +10,7 @@ public class food {
 		this.num = 1;
 	}
 	public void givefood(Point[] ps){
-		System.out.println("½øÈëÐÂ½¨Ê³Îï");
+		System.out.println("è¿›å…¥æ–°å»ºé£Ÿç‰©");
 		boolean ranfood=true;
 		while (ranfood) {
 			Random Random=new Random();
@@ -20,20 +20,20 @@ public class food {
 			int i=0;
 			for(i=0;i<ps.length;i++){
 				if(point.x==ps[i].x&&point.y==ps[i].y){
-					System.out.println("Ê³Îï×²µ½ÉßÉíÉÏÁË");
+					System.out.println("é£Ÿç‰©æ’žåˆ°è›‡èº«ä¸Šäº†");
 					break;
 				}
 			}
-			System.out.println("´ËÊ±iÖµÎª£º"+i);
+			System.out.println("æ­¤æ—¶iå€¼ä¸ºï¼š"+i);
 			if(i==ps.length){
 				ranfood=false;
 				getFood()[0]=point;
 			}
 			else{
 				ranfood=true;
-			}	
-			System.out.println("Êä³öÊ³Îï£º"+getFood()[0]);
-		}	
+			}
+			System.out.println("è¾“å‡ºé£Ÿç‰©ï¼š"+getFood()[0]);
+		}
 	}
 	public Point[] getFood() {
 		return food;

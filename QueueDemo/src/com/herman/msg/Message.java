@@ -1,11 +1,11 @@
 package com.herman.msg;
 
 public class Message {
-	private String sign_type;//Ç©Ãû(MD5¡¢RSA¡¢DSA)
-	private String sign;//Ç©Ãû×Ö·û´®
-	private String msg_length;//±¨ÎÄ³¤¶È
-	private String msg_type;//±¨ÎÄÀàĞÍ
-	private String msg_body;//±¨ÎÄÄÚÈİ
+	private String sign_type;//ç­¾å(MD5ã€RSAã€DSA)
+	private String sign;//ç­¾åå­—ç¬¦ä¸²
+	private String msg_length;//æŠ¥æ–‡é•¿åº¦
+	private String msg_type;//æŠ¥æ–‡ç±»å‹
+	private String msg_body;//æŠ¥æ–‡å†…å®¹
 	public String getSign_type() {
 		return sign_type;
 	}
@@ -40,7 +40,7 @@ public class Message {
 		super();
 	}
 	public Message(String signType, String sign, String msgLength,
-			String msgType, String msgBody) {
+				   String msgType, String msgBody) {
 		super();
 		sign_type = signType;
 		this.sign = sign;
@@ -48,6 +48,7 @@ public class Message {
 		msg_type = msgType;
 		msg_body = msgBody;
 	}
+	@Override
 	public String toString() {
 		return "Message [msg_body=" + msg_body + ", msg_length=" + msg_length
 				+ ", msg_type=" + msg_type + ", sign=" + sign + ", sign_type="
