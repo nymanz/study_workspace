@@ -43,18 +43,21 @@ public class MySystemTray extends JFrame{
 			PopupMenu popMenu = new PopupMenu();
 			MenuItem itmOpen = new MenuItem("打开");
 			itmOpen.addActionListener(new ActionListener(){
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					Show();
 				}				
 			});
 			MenuItem itmHide = new MenuItem("隐藏");
 			itmHide.addActionListener(new ActionListener(){
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					UnVisible();
 				}
 			});
 			MenuItem itmExit = new MenuItem("退出");
 			itmExit.addActionListener(new ActionListener(){
+				@Override
 				public void actionPerformed(ActionEvent e) {
 					Exit();
 				}
