@@ -1,5 +1,6 @@
 package com.herman.msg;
 
+
 public class Message {
 	private String sign_type;//签名(MD5、RSA、DSA)
 	private String sign;//签名字符串

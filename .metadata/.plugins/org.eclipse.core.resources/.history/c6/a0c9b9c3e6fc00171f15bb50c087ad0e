@@ -1,7 +1,0 @@
-package cn.com.agree.OleTest;
-
-import org.eclipse.swt.widgets.Composite;
-
-public class WMP extends Composite {
-
-}

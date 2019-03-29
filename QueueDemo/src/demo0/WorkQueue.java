@@ -3,17 +3,17 @@ package demo0;
 import java.util.LinkedList;
 /**
  * @author Herman.Xiong
- * @see ¶àÏß³Ì»òµ¥Ïß³ÌÈ¥¶ÓÁĞ¶ÓÊ×ÇëÇó
- * @date 2014Äê2ÔÂ26ÈÕ 11:53:46
+ * @see å¤šçº¿ç¨‹æˆ–å•çº¿ç¨‹å»é˜Ÿåˆ—é˜Ÿé¦–è¯·æ±‚
+ * @date 2014å¹´2æœˆ26æ—¥ 11:53:46
  * @version V1.0
  * @since Jdk1.6
  */
 @SuppressWarnings({"unused","unchecked"})
 public class WorkQueue{
-    
-	private final int nThreads;//Í¬Ê±×î¶àÖ´ĞĞµÄÏß³Ì¸öÊı
-    private final PoolWorker[] threads;//Ïß³Ì³Ø
-	private final LinkedList queue;//Ïß³Ì¶ÓÁĞ
+
+    private final int nThreads;//åŒæ—¶æœ€å¤šæ‰§è¡Œçš„çº¿ç¨‹ä¸ªæ•°
+    private final PoolWorker[] threads;//çº¿ç¨‹æ± 
+    private final LinkedList queue;//çº¿ç¨‹é˜Ÿåˆ—
 
     public WorkQueue(int nThreads)
     {
@@ -34,11 +34,12 @@ public class WorkQueue{
     }
 
     /**
-     * @Í¬²½È¥È¡¶ÓÊ×¶ÔÏó
+     * @åŒæ­¥å»å–é˜Ÿé¦–å¯¹è±¡
      * @author Herman.Xiong
-     * @date 2014Äê2ÔÂ26ÈÕ 11:55:16   
+     * @date 2014å¹´2æœˆ26æ—¥ 11:55:16
      */
     private class PoolWorker extends Thread {
+        @Override
         public void run() {
             Runnable r;
             while (true) {
@@ -47,7 +48,7 @@ public class WorkQueue{
                         try{
                             queue.wait();
                         }catch (InterruptedException e){
-                        	e.printStackTrace();
+                            e.printStackTrace();
                         }
                     }
                     r = (Runnable) queue.removeFirst();
@@ -55,7 +56,7 @@ public class WorkQueue{
                 try {
                     r.run();
                 }catch (RuntimeException e) {
-                	e.printStackTrace();
+                    e.printStackTrace();
                 }
             }
         }

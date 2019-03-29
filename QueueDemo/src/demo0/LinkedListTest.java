@@ -1,23 +1,23 @@
 package demo0;
 
 /**
- * @see LinkedList¶ÓÁĞ²âÊÔÀà(µ¥Ïß³ÌºÍ¶àÏß³Ì)
+ * @see LinkedListé˜Ÿåˆ—æµ‹è¯•ç±»(å•çº¿ç¨‹å’Œå¤šçº¿ç¨‹)
  * @author Herman.Xiong
  * @since jdk 1.6
- * @date 2014Äê2ÔÂ26ÈÕ 11:58:10
+ * @date 2014å¹´2æœˆ26æ—¥ 11:58:10
  * @version V1.0
  */
 public class LinkedListTest {
 
 	public static void main(String[] args) {
 		LinkedListTest tm=new LinkedListTest();
-		tm.test1();//Ö»ÔÊĞíÍ¬Ê±ÔËĞĞ1¸öÏß³Ì
-		//tm.test5();//Ö»ÔÊĞíÍ¬Ê±ÔËĞĞ5¸öÏß³Ì
+		tm.test1();//åªå…è®¸åŒæ—¶è¿è¡Œ1ä¸ªçº¿ç¨‹
+		//tm.test5();//åªå…è®¸åŒæ—¶è¿è¡Œ5ä¸ªçº¿ç¨‹
 	}
-	
-	//Ö»ÔÊĞíÍ¬Ê±ÔËĞĞ1¸öÏß³Ì
+
+	//åªå…è®¸åŒæ—¶è¿è¡Œ1ä¸ªçº¿ç¨‹
 	void test1(){
-		//Ö»ÔÊĞíÍ¬Ê±ÔËĞĞ1¸öÏß³Ì
+		//åªå…è®¸åŒæ—¶è¿è¡Œ1ä¸ªçº¿ç¨‹
 		WorkQueue workQueue = new WorkQueue(1);
 		for (int i = 0; i < Integer.MAX_VALUE; i++) {
 			WorkThread wThread = new WorkThread();
@@ -29,10 +29,10 @@ public class LinkedListTest {
 			}
 		}
 	}
-	
-	//Ö»ÔÊĞíÍ¬Ê±ÔËĞĞ5¸öÏß³Ì
+
+	//åªå…è®¸åŒæ—¶è¿è¡Œ5ä¸ªçº¿ç¨‹
 	void test5(){
-		//Ö»ÔÊĞíÍ¬Ê±ÔËĞĞ5¸öÏß³Ì
+		//åªå…è®¸åŒæ—¶è¿è¡Œ5ä¸ªçº¿ç¨‹
 		WorkQueue workQueue =new WorkQueue(5);
 		for (int i = 0; i < 30; i++) {
 			WorkThread wThread=new WorkThread();
