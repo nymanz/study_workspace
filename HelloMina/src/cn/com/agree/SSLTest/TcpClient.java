@@ -61,13 +61,13 @@ public class TcpClient extends IoHandlerAdapter{
         
         if (received != counter.getCount()) {
             System.out.println("Error !");
-            session.closeNow();
+            session.close(true);
         } else {
             if (counter.getCount() == 0L) {
                 t1 = System.currentTimeMillis();
                 
                 System.out.println("------------->  end " + (t1 - t0));
-                session.closeNow();
+                session.close(true);
             } else {
                 counter.countDown();
                 

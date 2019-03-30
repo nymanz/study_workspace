@@ -36,7 +36,6 @@ class jdbcBean {
 	 public static List select(){
 		 
 		 return cn.com.agree.jdbcUtil.JdbcUtil.executeSelect("select * from student",new RowMap<Student>(){
-			 @Override
 			public Student rowMapping(ResultSet rs){
 				 Student student=new Student();	
 				try {
@@ -74,7 +73,7 @@ class jdbcBean {
 			return list;*/
 	}
 	 public void tset(){
-		 HashMap<String,Student> sHashMap=new HashMap<>();
+		 HashMap<String,Student> sHashMap=new HashMap();
 		 for(int i=0;i<4;i++){
 			 System.out.println("qingshuru");
 			 Scanner scanner=new Scanner(System.in);
@@ -82,7 +81,7 @@ class jdbcBean {
 			 String sname=scanner.next();
 			 Integer age=scanner.nextInt();
 			 String sex=scanner.next();
-			 Student student=new Student(sname, age, sid, sex);
+			 Student student=new Student(age, sname, sex, sid );
 			 sHashMap.put("Student"+i, student);
 		 }
 		 for(int i=0;i<4;i++){

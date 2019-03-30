@@ -10,8 +10,8 @@ import java.util.List;
 
 import cn.com.agree.jdbc.RowMap;
 
-public class JdbcUtil {
-	public static Connection getConnection(){
+public class  JdbcUtil {
+	private static Connection getConnection(){
 		Connection connection=null;
 		//������
 		try {
@@ -64,7 +64,7 @@ public class JdbcUtil {
 	
 	
 	public static <T>List<T> executeSelect(String sql,RowMap<T> rowMap,Object...params){
-		List<T> result=new ArrayList<>();
+		List<T> result=new ArrayList();
 		Connection connection=getConnection();
 		try {
 			PreparedStatement pstmt=connection.prepareStatement(sql);
