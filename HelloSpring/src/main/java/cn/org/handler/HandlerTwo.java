@@ -3,7 +3,6 @@ import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
 
-
 public class HandlerTwo extends IoHandlerAdapter {
 	 @Override
 	    public void messageReceived(IoSession session, Object message)
