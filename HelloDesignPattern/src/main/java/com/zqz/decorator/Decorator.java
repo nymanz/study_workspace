@@ -5,9 +5,6 @@ package com.zqz.decorator;
  * @version 1.0
  * @title
  * @description
- * @company 好未来-爱智康
- * @mobile 18716022536
- * @created 2020-04-04 18:14
  * @changeRecord
  */
 public abstract class Decorator extends Component {

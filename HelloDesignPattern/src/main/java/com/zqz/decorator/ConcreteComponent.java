@@ -7,9 +7,6 @@ import java.util.logging.Logger;
  * @version 1.0
  * @title
  * @description
- * @company 好未来-爱智康
- * @mobile 18716022536
- * @created 2020-04-04 18:10
  * @changeRecord
  */
 public class ConcreteComponent extends Component {
