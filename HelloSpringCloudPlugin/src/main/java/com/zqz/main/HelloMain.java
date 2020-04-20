@@ -3,6 +3,7 @@ package com.zqz.main;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
  * @author 赵乾泽
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @created 2020-04-08 22:38
  * @changeRecord
  */
+@EnableTransactionManagement
 @ComponentScan(value = "com.zqz")
 @SpringBootApplication
 public class HelloMain {
